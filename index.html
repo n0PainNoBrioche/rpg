@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#1a1340" />
+    <title>L'aventure de Sacha / Léa</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #0d0922; overflow: hidden; overscroll-behavior: none; }
+      #game { position: fixed; inset: 0; touch-action: none; user-select: none; -webkit-user-select: none; }
+      #game canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; }
+      #rotate {
+        display: none; position: fixed; inset: 0; z-index: 10; background: #1a1340; color: #f4efc8;
+        font: 12px/1.8 "Press Start 2P", monospace; text-align: center; align-items: center;
+        justify-content: center; flex-direction: column; gap: 24px; padding: 24px;
+      }
+      #rotate i { width: 56px; height: 32px; border: 4px solid #a8d86a; border-radius: 4px; animation: turn 2.4s ease-in-out infinite; }
+      @keyframes turn { 0%, 30% { transform: rotate(-90deg); } 70%, 100% { transform: rotate(0deg); } }
+      @media (orientation: portrait) and (max-width: 900px) { #rotate { display: flex; } }
+      @media (prefers-reduced-motion: reduce) { #rotate i { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <div id="rotate" role="alert"><i></i><span>Pivote ton téléphone en mode paysage pour jouer.</span></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
