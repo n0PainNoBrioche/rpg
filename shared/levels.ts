@@ -11,7 +11,7 @@ export interface LevelMeta {
 }
 
 export const LEVELS: readonly LevelMeta[] = [
-  { id: "level01", name: "La taxe du matcha", minDurationSec: 60 },
+  { id: "level01", name: "La taxe tampon", minDurationSec: 40 },
   { id: "level02", name: "À venir", minDurationSec: 60 },
   { id: "level03", name: "À venir", minDurationSec: 60 },
 ];

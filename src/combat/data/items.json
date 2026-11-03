@@ -1,0 +1,14 @@
+{
+  "chocolat_chaud": {
+    "name": "Chocolat chaud",
+    "description": "Rend 40 PV",
+    "target": "ally",
+    "hp": 40
+  },
+  "the_glace": {
+    "name": "Thé glacé",
+    "description": "Rend 25 PM",
+    "target": "ally",
+    "mp": 25
+  }
+}

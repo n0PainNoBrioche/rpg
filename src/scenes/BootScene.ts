@@ -1,5 +1,6 @@
 import Phaser from "phaser";
-import { bakeHero } from "../art/hero";
+import { bakeAllSprites } from "../art/sprites";
+import { bakeProps } from "../art/props";
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -12,7 +13,9 @@ export class BootScene extends Phaser.Scene {
     } catch {
       /* police de secours : monospace */
     }
-    bakeHero(this);
+    bakeAllSprites(this);
+    bakeProps(this);
+    this.scene.launch("AudioOverlayScene");
     this.scene.start("MenuScene");
   }
 }

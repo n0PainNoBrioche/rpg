@@ -5,10 +5,12 @@ import { SaveSlotsScene } from "../scenes/SaveSlotsScene";
 import { CharacterSelectionScene } from "../scenes/CharacterSelectionScene";
 import { LevelSelectScene } from "../scenes/LevelSelectScene";
 import { ExplorationScene } from "../scenes/ExplorationScene";
+import { BattleScene } from "../scenes/BattleScene";
+import { GameOverScene } from "../scenes/GameOverScene";
+import { LevelCompleteScene } from "../scenes/LevelCompleteScene";
+import { AudioOverlayScene } from "../scenes/AudioOverlayScene";
 
-/** Résolution logique 16:9, mise à l'échelle par Phaser (pixels nets). */
-export const GAME_WIDTH = 480;
-export const GAME_HEIGHT = 270;
+import { GAME_HEIGHT, GAME_WIDTH } from "./constants";
 
 export function createGame(parent: string): Phaser.Game {
   return new Phaser.Game({
@@ -20,6 +22,12 @@ export function createGame(parent: string): Phaser.Game {
     pixelArt: true,
     roundPixels: true,
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
-    scene: [BootScene, MenuScene, SaveSlotsScene, CharacterSelectionScene, LevelSelectScene, ExplorationScene],
+    scene: [BootScene, MenuScene, SaveSlotsScene, CharacterSelectionScene, LevelSelectScene,
+      ExplorationScene,
+      BattleScene,
+      GameOverScene,
+      LevelCompleteScene,
+      AudioOverlayScene,
+    ],
   });
 }

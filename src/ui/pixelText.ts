@@ -3,7 +3,7 @@ import Phaser from "phaser";
 export const FONT = '"Press Start 2P", monospace';
 export const COLORS = {
   cream: "#f4efc8",
-  matcha: "#a8d86a",
+  green: "#a8d86a",
   red: "#e8475a",
   grey: "#7a7399",
   night: "#0f0a26",

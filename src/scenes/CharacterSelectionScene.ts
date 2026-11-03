@@ -1,9 +1,8 @@
 import Phaser from "phaser";
-import { GAME_WIDTH as W } from "../core/Game";
+import { GAME_WIDTH as W } from "../core/constants";
 import { gameState } from "../core/GameState";
 import { SaveManager } from "../core/SaveManager";
 import { CHARACTER_NAMES, type CharacterName } from "../../shared/types";
-import { HERO_TEXTURE } from "../art/hero";
 import { createCityBackdrop } from "../ui/CityBackdrop";
 import { COLORS, drawPanel, pixelText } from "../ui/pixelText";
 
@@ -26,13 +25,13 @@ export class CharacterSelectionScene extends Phaser.Scene {
     this.heroes = [];
     createCityBackdrop(this);
     drawPanel(this, 24, 14, W - 48, 242);
-    pixelText(this, W / 2, 34, "Choisis ton prénom", 8, COLORS.matcha);
+    pixelText(this, W / 2, 34, "Choisis ton prénom", 8, COLORS.green);
 
     CHARACTER_NAMES.forEach((name, i) => {
       const cx = 150 + i * 180;
       const card = this.add.graphics();
       this.cards.push(card);
-      const hero = this.add.image(cx, 108, HERO_TEXTURE).setScale(4).setOrigin(0.5, 0.5);
+      const hero = this.add.image(cx, 108, "hero").setScale(4).setOrigin(0.5, 0.5);
       this.heroes.push(hero);
       this.tweens.add({ targets: hero, y: 112, duration: 500, yoyo: true, repeat: -1, ease: "Stepped" });
       // arc : trois traits, repris par la même couleur que les bottes
@@ -45,7 +44,7 @@ export class CharacterSelectionScene extends Phaser.Scene {
     });
 
     pixelText(this, W / 2, 196, "C'est la même aventurière : seul le prénom change.", 8, COLORS.grey);
-    const confirm = pixelText(this, W / 2, 222, "Commencer", 8, COLORS.matcha);
+    const confirm = pixelText(this, W / 2, 222, "Commencer", 8, COLORS.green);
     confirm.setInteractive(new Phaser.Geom.Rectangle(-30, -10, confirm.width + 60, confirm.height + 20), Phaser.Geom.Rectangle.Contains);
     confirm.on("pointerdown", () => this.confirm());
     const back = pixelText(this, 52, 34, "Retour", 8, COLORS.grey).setOrigin(0.5);

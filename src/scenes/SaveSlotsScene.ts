@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { GAME_WIDTH as W } from "../core/Game";
+import { GAME_WIDTH as W } from "../core/constants";
 import { gameState } from "../core/GameState";
 import { SaveManager } from "../core/SaveManager";
 import { LEVELS } from "../../shared/levels";
@@ -32,7 +32,7 @@ export class SaveSlotsScene extends Phaser.Scene {
   create(): void {
     createCityBackdrop(this);
     drawPanel(this, 24, 28, W - 48, 214);
-    pixelText(this, W / 2, 46, "Charger une partie", 8, COLORS.matcha);
+    pixelText(this, W / 2, 46, "Charger une partie", 8, COLORS.green);
     const info = pixelText(this, W / 2, 140, "Chargement...", 8, COLORS.grey);
 
     SaveManager.list()

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "start",
+    "trigger": { "type": "auto" },
+    "actions": [{ "type": "objective", "text": "Se promener dans la rue" }]
+  },
+  {
+    "id": "scream",
+    "trigger": { "type": "zone", "x": 360 },
+    "once": true,
+    "actions": [
+      { "type": "sfx", "key": "scream" },
+      { "type": "shake", "duration": 300, "intensity": 0.004 },
+      { "type": "dialogue", "id": "scream" },
+      { "type": "objective", "text": "Suivre les cris dans la rue" }
+    ]
+  },
+  {
+    "id": "meet",
+    "trigger": { "type": "zone", "x": 1160 },
+    "requires": ["scream"],
+    "once": true,
+    "actions": [
+      { "type": "objective", "text": "" },
+      { "type": "actor", "id": "hero", "anim": "walkTo", "x": 1260 },
+      { "type": "cameraPan", "x": 1350, "duration": 900 },
+      { "type": "dialogue", "id": "meet_maxime" },
+      { "type": "dialogue", "id": "pre_battle" },
+      { "type": "battle", "encounter": "boss_maxime" },
+      { "type": "actor", "id": "maxime", "anim": "hurt" },
+      { "type": "dialogue", "id": "post_battle" },
+      { "type": "actor", "id": "maxime", "anim": "flee", "x": 1900, "duration": 1100 },
+      { "type": "actor", "id": "clement", "anim": "standUp" },
+      { "type": "dialogue", "id": "proposal" },
+      {
+        "type": "choice",
+        "options": [
+          {
+            "label": "Pourquoi pas !",
+            "then": [
+              { "type": "dialogue", "id": "accept" },
+              { "type": "actor", "id": "clement", "anim": "joy" },
+              { "type": "actor", "id": "hero", "anim": "embarrassed" },
+              { "type": "completeLevel" }
+            ]
+          },
+          {
+            "label": "Non merci, je préfère rentrer.",
+            "then": [
+              { "type": "dialogue", "id": "refuse" },
+              { "type": "gameOver", "variant": "feur" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  { "id": "look_bench1", "trigger": { "type": "interact", "target": "bench1" }, "actions": [{ "type": "dialogue", "id": "bench_look" }] },
+  { "id": "look_bench2", "trigger": { "type": "interact", "target": "bench2" }, "actions": [{ "type": "dialogue", "id": "bench_look" }] },
+  { "id": "look_sign", "trigger": { "type": "interact", "target": "sign1" }, "actions": [{ "type": "dialogue", "id": "sign_look" }] },
+  { "id": "look_vending", "trigger": { "type": "interact", "target": "vending1" }, "actions": [{ "type": "dialogue", "id": "vending_look" }] },
+  { "id": "look_bin", "trigger": { "type": "interact", "target": "bin1" }, "actions": [{ "type": "dialogue", "id": "bin_look" }] },
+  { "id": "look_stall", "trigger": { "type": "interact", "target": "stall1" }, "actions": [{ "type": "dialogue", "id": "stall_look" }] },
+  { "id": "look_lamp", "trigger": { "type": "interact", "target": "lamp2" }, "actions": [{ "type": "dialogue", "id": "lamp_look" }] }
+]

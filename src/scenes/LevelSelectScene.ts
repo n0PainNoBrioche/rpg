@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { GAME_WIDTH as W } from "../core/Game";
+import { GAME_WIDTH as W } from "../core/constants";
 import { gameState } from "../core/GameState";
 import { SaveManager } from "../core/SaveManager";
 import { LevelManager, type LevelStatus } from "../levels/LevelManager";
@@ -27,7 +27,7 @@ export class LevelSelectScene extends Phaser.Scene {
     }
     createCityBackdrop(this);
     drawPanel(this, 24, 28, W - 48, 214);
-    pixelText(this, W / 2, 46, `Aventure de ${save.pseudo}`, 8, COLORS.matcha);
+    pixelText(this, W / 2, 46, `Aventure de ${save.pseudo}`, 8, COLORS.green);
     const status = pixelText(this, W / 2, 226, "", 8, COLORS.red);
 
     const menu: MenuList = new MenuList(

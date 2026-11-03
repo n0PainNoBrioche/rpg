@@ -1,0 +1,5 @@
+{
+  "_doc": "Optionnel. Pour remplacer une musique ou un effet synthétisé par un vrai fichier, déposer le fichier dans public/audio/ et le déclarer ici. Clés musique : exploration, battle, boss, victory, levelcomplete, gameover. Exemple : { \"music\": { \"boss\": \"boss.ogg\" }, \"sfx\": { \"hit\": \"hit.wav\" } }",
+  "music": {},
+  "sfx": {}
+}

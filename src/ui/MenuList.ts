@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { audio } from "../audio/AudioManager";
 import { COLORS, FONT } from "./pixelText";
 
 export interface MenuItem {
@@ -11,6 +12,11 @@ export interface MenuListOptions {
   lineHeight?: number;
   align?: "center" | "left";
   fontSize?: number;
+  /** Appelé sur Échap / Retour arrière / X. */
+  onCancel?: () => void;
+  depth?: number;
+  /** Fixe la liste à l'écran (ignore la caméra). */
+  scrollFactor0?: boolean;
 }
 
 /** Liste de choix navigable au clavier (haut/bas + entrée), à la souris et au toucher. */
@@ -21,6 +27,8 @@ export class MenuList {
   private disabled: boolean[];
   private locked = false;
   private readonly onKey: (e: KeyboardEvent) => void;
+  private onCancel?: () => void;
+  private destroyed = false;
 
   constructor(
     private readonly scene: Phaser.Scene,
@@ -48,17 +56,37 @@ export class MenuList {
       this.labels.push(t);
     });
 
-    this.cursor = scene.add.text(0, 0, ">", { fontFamily: FONT, fontSize: `${size}px`, color: COLORS.matcha }).setOrigin(0.5);
+    this.cursor = scene.add.text(0, 0, ">", { fontFamily: FONT, fontSize: `${size}px`, color: COLORS.green }).setOrigin(0.5);
     this.index = Math.max(0, this.disabled.findIndex((d) => !d));
     this.refresh();
 
+    this.onCancel = opts.onCancel;
     this.onKey = (e) => {
+      if (e.repeat) return;
+      if (this.onCancel && (e.code === "Escape" || e.code === "Backspace" || e.code === "KeyX")) {
+        if (!this.locked) this.onCancel();
+        return;
+      }
       if (e.code === "ArrowUp" || e.code === "KeyW") this.move(-1);
       else if (e.code === "ArrowDown" || e.code === "KeyS") this.move(1);
       else if (e.code === "Enter" || e.code === "Space" || e.code === "KeyZ") this.activate();
     };
+    if (opts.depth !== undefined || opts.scrollFactor0) {
+      [...this.labels, this.cursor].forEach((o) => {
+        if (opts.depth !== undefined) o.setDepth(opts.depth);
+        if (opts.scrollFactor0) o.setScrollFactor(0);
+      });
+    }
     scene.input.keyboard?.on("keydown", this.onKey);
     scene.events.once("shutdown", () => scene.input.keyboard?.off("keydown", this.onKey));
+  }
+
+  destroy(): void {
+    if (this.destroyed) return;
+    this.destroyed = true;
+    this.scene.input.keyboard?.off("keydown", this.onKey);
+    this.labels.forEach((l) => l.destroy());
+    this.cursor.destroy();
   }
 
   setDisabled(i: number, value: boolean): void {
@@ -85,6 +113,7 @@ export class MenuList {
       const j = (this.index + delta * step + n * step) % n;
       if (!this.disabled[j]) {
         this.index = j;
+        audio.playSfx("move");
         break;
       }
     }
@@ -93,12 +122,13 @@ export class MenuList {
 
   private activate(): void {
     if (this.locked || this.disabled[this.index]) return;
+    audio.playSfx("select");
     this.items[this.index].onSelect();
   }
 
   private refresh(): void {
     this.labels.forEach((t, i) => {
-      t.setColor(this.disabled[i] ? COLORS.grey : i === this.index ? COLORS.matcha : COLORS.cream);
+      t.setColor(this.disabled[i] ? COLORS.grey : i === this.index ? COLORS.green : COLORS.cream);
     });
     const sel = this.labels[this.index];
     if (sel) this.cursor.setPosition(sel.x - sel.displayWidth * sel.originX - 10, sel.y);

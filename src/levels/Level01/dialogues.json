@@ -1,0 +1,173 @@
+{
+  "speakers": {
+    "hero": {
+      "name": "@hero",
+      "portrait": "portrait_hero"
+    },
+    "clement": {
+      "name": "Clément",
+      "portrait": "portrait_clement"
+    },
+    "maxime": {
+      "name": "Maxime le petit con",
+      "portrait": "portrait_maxime"
+    },
+    "cries": {
+      "name": "???"
+    }
+  },
+  "scenes": {
+    "scream": [
+      {
+        "speaker": "cries",
+        "text": "Aaaaah ! Non ! Pas ça ! Pas sur les protections !"
+      },
+      {
+        "speaker": "hero",
+        "text": "Hein ? C'était quoi ça ?"
+      },
+      {
+        "speaker": "hero",
+        "text": "Ça vient du bout de la rue... Allons voir, par curiosité."
+      }
+    ],
+    "meet_maxime": [
+      {
+        "speaker": "maxime",
+        "text": "Ah, une spectatrice. Parfait. Je suis Maxime le petit con."
+      },
+      {
+        "speaker": "maxime",
+        "text": "Les protections hygiéniques sont devenues un produit de luxe. Un produit de luxe mérite une taxation exceptionnelle : 1000 % !"
+      },
+      {
+        "speaker": "clement",
+        "text": "Cette taxe va appauvrir encore plus les femmes... qui paient déjà la taxe rose !"
+      },
+      {
+        "speaker": "maxime",
+        "text": "Détail technique. Mon projet est excellent. J'ai toujours raison."
+      },
+      {
+        "speaker": "clement",
+        "text": "Je dois absolument le battre pour empêcher le vote... mais je n'arrive plus à me battre."
+      }
+    ],
+    "pre_battle": [
+      {
+        "speaker": "clement",
+        "text": "Aide-moi... Je ne peux pas le laisser faire ! Il va rendre les protections inaccessibles à des millions de femmes !"
+      },
+      {
+        "speaker": "hero",
+        "text": "Bon... Je suppose que je n'ai pas vraiment le choix."
+      },
+      {
+        "speaker": "clement",
+        "text": "Merci ! Je t'aiderai avec mon clavier et tout mon savoir."
+      },
+      {
+        "speaker": "maxime",
+        "text": "Un clavier ? Contre un spécialiste des taxes ? Adorable."
+      }
+    ],
+    "post_battle": [
+      {
+        "speaker": "maxime",
+        "text": "Impossible ! Mon projet de taxation des protections hygiéniques..."
+      },
+      {
+        "speaker": "hero",
+        "text": "C'est terminé. Tu ne toucheras pas aux protections hygiéniques !"
+      },
+      {
+        "speaker": "clement",
+        "text": "Nous avons réussi... L'accès aux protections est sauvé !"
+      },
+      {
+        "speaker": "maxime",
+        "text": "Je reviendrai... avec un amendement !"
+      }
+    ],
+    "proposal": [
+      {
+        "speaker": "clement",
+        "text": "Merci. Vraiment. Sans toi, je n'y serais jamais arrivé."
+      },
+      {
+        "speaker": "clement",
+        "text": "Au fait... Ça te dirait qu'on aille boire un verre ensemble ?"
+      }
+    ],
+    "accept": [
+      {
+        "speaker": "hero",
+        "text": "Pourquoi pas !"
+      },
+      {
+        "speaker": "clement",
+        "text": "Génial ! Tu peux m'envoyer tes disponibilités sur Instagram !"
+      }
+    ],
+    "refuse": [
+      {
+        "speaker": "hero",
+        "text": "Non merci, je préfère rentrer."
+      },
+      {
+        "speaker": "clement",
+        "effect": "shake",
+        "text": "Ah... Pourtant le zorglub du tampon-kernel, c'est comme un fwip de blorgnabule dans le yaourt quantique, tu vois ?!"
+      },
+      {
+        "speaker": "clement",
+        "effect": "shake",
+        "text": "...et le glimbo qui fait flonk sur le pod de la tartiflette distribuée, donc forcément, wazzzzak !"
+      },
+      {
+        "speaker": "hero",
+        "text": "Quoi ?"
+      },
+      {
+        "speaker": "clement",
+        "text": "Feur."
+      }
+    ],
+    "bench_look": [
+      {
+        "speaker": "hero",
+        "text": "Un banc. Pas le temps de m'asseoir, j'ai une promenade à finir."
+      }
+    ],
+    "sign_look": [
+      {
+        "speaker": "hero",
+        "text": "Une affiche : « RÉUNION PUBLIQUE CE SOIR : TAXONS TOUT ! » Ça sent mauvais."
+      }
+    ],
+    "vending_look": [
+      {
+        "speaker": "hero",
+        "text": "Un distributeur de protections hygiéniques. Le prix affiché a déjà l'air gonflé..."
+      }
+    ],
+    "bin_look": [
+      {
+        "speaker": "hero",
+        "text": "Une poubelle. Pas de trésor ici."
+      }
+    ],
+    "stall_look": [
+      {
+        "speaker": "hero",
+        "text": "Un kiosque de pharmacie, fermé. Le rayon des protections est vide."
+      }
+    ],
+    "lamp_look": [
+      {
+        "speaker": "hero",
+        "text": "Un lampadaire. Il éclaire à peu près tout ce qu'il peut."
+      }
+    ]
+  }
+}

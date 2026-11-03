@@ -1,0 +1,55 @@
+{
+  "arc_shot": { "name": "Tir à l'arc", "mpCost": 0, "kind": "physical", "target": "enemy", "power": 1.1, "animation": "shoot", "message": "{user} décoche une flèche !" },
+  "tir_puissant": { "name": "Tir puissant", "mpCost": 6, "kind": "physical", "target": "enemy", "power": 1.9, "animation": "shoot_power", "message": "{user} bande son arc au maximum !" },
+  "taekwondo": { "name": "Taekwondo", "mpCost": 4, "kind": "physical", "target": "enemy", "power": 1.5, "animation": "kick", "message": "{user} enchaîne un coup de taekwondo !" },
+  "coup_special": { "name": "Coup spécial", "mpCost": 8, "kind": "physical", "target": "enemy", "power": 2.2, "animation": "kick_special", "message": "{user} place un coup de pied retourné !" },
+  "blague_beauf": {
+    "name": "Blague beauf", "mpCost": 4, "kind": "mental", "target": "enemy", "power": 1.3, "animation": "joke",
+    "message": "{user} sort une blague de beauf !",
+    "lines": [{ "who": "user", "text": "Un mec rentre dans un bar... Aïe ! C'était une barre de fer !" }]
+  },
+  "curling": {
+    "name": "Curling", "mpCost": 6, "kind": "mental", "target": "enemy", "power": 1.7, "animation": "joke",
+    "message": "{user} lance une provocation sur le curling !",
+    "lines": [{ "who": "user", "text": "On aurait gagné les JO de curling si c'était des femmes qui tenaient le balai." }],
+    "status": { "type": "enrage", "chance": 0.6, "turns": 2 }
+  },
+  "dit_camion": {
+    "name": "Dit camion !", "mpCost": 8, "kind": "mental", "target": "enemy", "power": 2.0, "animation": "camion",
+    "message": "{user} tente un humour absurde !",
+    "lines": [{ "who": "user", "text": "Dit camion !" }, { "who": "target", "text": "Camion." }],
+    "shout": "POUET POUET !",
+    "status": { "type": "confuse", "chance": 0.7, "turns": 2 }
+  },
+  "jeu_de_mots": {
+    "name": "Jeu de mots", "mpCost": 5, "kind": "mental", "target": "enemy", "power": 1.5, "animation": "joke",
+    "message": "{user} lâche un jeu de mots !",
+    "lines": [{ "who": "user", "text": "Une taxe sur les tampons ? Tu vas te faire tamponner !" }]
+  },
+
+  "coup_clavier": { "name": "Coup clavier", "mpCost": 0, "kind": "physical", "target": "enemy", "power": 1.0, "animation": "keyboard_hit", "message": "{user} frappe avec son clavier !" },
+  "clavier_fou": { "name": "Clavier fou", "mpCost": 3, "kind": "physical", "target": "enemy", "power": 1.6, "animation": "keyboard", "message": "{user} lance une rafale d'attaques au clavier !" },
+  "combo_mecanique": { "name": "Combo méca", "mpCost": 7, "kind": "physical", "target": "enemy", "power": 0.9, "hits": 3, "animation": "keyboard_combo", "message": "{user} enchaîne un combo mécanique !" },
+  "ragebait": {
+    "name": "Ragebait", "mpCost": 4, "kind": "mental", "target": "enemy", "power": 0.6, "animation": "echo", "echo": true,
+    "message": "{user} répète tout ce que dit {target} !",
+    "lines": [{ "who": "user", "text": "{echo}" }, { "who": "user", "text": "{echo}" }],
+    "status": { "type": "enrage", "chance": 0.9, "turns": 2 }
+  },
+  "kubernetes": {
+    "name": "Kubernetes", "mpCost": 10, "kind": "mental", "target": "enemy", "power": 0.5, "animation": "lecture",
+    "message": "{user} commence un cours sur Kubernetes...",
+    "lines": [
+      { "who": "user", "text": "Un pod, c'est un groupe de conteneurs qui partagent le réseau..." },
+      { "who": "user", "text": "...et le kubelet demande au scheduler de..." },
+      { "who": "target", "text": "Zzz..." }
+    ],
+    "status": { "type": "sleep", "chance": 0.8, "turns": 2 }
+  },
+  "provocation": {
+    "name": "Provocation", "mpCost": 5, "kind": "mental", "target": "enemy", "power": 1.2, "animation": "joke",
+    "message": "{user} provoque {target} !",
+    "lines": [{ "who": "user", "text": "Même ton PowerPoint est en Comic Sans !" }],
+    "status": { "type": "enrage", "chance": 0.6, "turns": 2 }
+  }
+}

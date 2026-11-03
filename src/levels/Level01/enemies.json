@@ -1,0 +1,110 @@
+{
+  "encounters": {
+    "boss_maxime": {
+      "enemies": [
+        "maxime"
+      ],
+      "music": "boss",
+      "intro": "Maxime le petit con te barre la route !"
+    }
+  },
+  "enemies": {
+    "maxime": {
+      "name": "Maxime le petit con",
+      "texture": "maxime",
+      "scale": 4,
+      "stats": {
+        "maxHp": 240,
+        "maxMp": 99,
+        "atk": 22,
+        "def": 8,
+        "spd": 10,
+        "mres": 8
+      },
+      "basicSkill": "taxe_exceptionnelle",
+      "skills": [
+        "taxe_exceptionnelle",
+        "discours_economique",
+        "taxe_rose",
+        "reforme_surprise"
+      ],
+      "ai": [
+        {
+          "skill": "taxe_exceptionnelle",
+          "weight": 4
+        },
+        {
+          "skill": "discours_economique",
+          "weight": 3
+        },
+        {
+          "skill": "taxe_rose",
+          "weight": 2,
+          "minTurn": 2
+        },
+        {
+          "skill": "reforme_surprise",
+          "weight": 2,
+          "minTurn": 3
+        }
+      ]
+    }
+  },
+  "skills": {
+    "taxe_exceptionnelle": {
+      "name": "Taxe except.",
+      "mpCost": 0,
+      "kind": "physical",
+      "target": "enemy",
+      "power": 1.1,
+      "animation": "tax",
+      "message": "{user} abat une taxe exceptionnelle sur {target} !",
+      "shout": "Taxe exceptionnelle !"
+    },
+    "discours_economique": {
+      "name": "Discours",
+      "mpCost": 0,
+      "kind": "mental",
+      "target": "allEnemies",
+      "power": 0.9,
+      "animation": "speech",
+      "message": "{user} prononce un discours économique interminable !",
+      "lines": [
+        {
+          "who": "user",
+          "text": "Les protections sont un produit de luxe, donc 1000 % de taxe."
+        }
+      ]
+    },
+    "taxe_rose": {
+      "name": "Taxe rose",
+      "mpCost": 0,
+      "kind": "mental",
+      "target": "enemy",
+      "power": 1.2,
+      "animation": "pink",
+      "message": "{user} applique la taxe rose sur {target} !",
+      "lines": [
+        {
+          "who": "user",
+          "text": "Et voici la taxe rose : 20 % plus cher, parce que c'est rose !"
+        }
+      ],
+      "status": {
+        "type": "confuse",
+        "chance": 0.6,
+        "turns": 2
+      }
+    },
+    "reforme_surprise": {
+      "name": "Réforme",
+      "mpCost": 0,
+      "kind": "physical",
+      "target": "enemy",
+      "power": 2.0,
+      "animation": "reform",
+      "message": "{user} dégaine une réforme surprise !",
+      "shout": "Réforme... surprise !"
+    }
+  }
+}

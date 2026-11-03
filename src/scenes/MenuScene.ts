@@ -1,6 +1,7 @@
 import Phaser from "phaser";
-import { GAME_HEIGHT as H, GAME_WIDTH as W } from "../core/Game";
+import { GAME_HEIGHT as H, GAME_WIDTH as W } from "../core/constants";
 import { SaveManager } from "../core/SaveManager";
+import { audio } from "../audio/AudioManager";
 import { createCityBackdrop } from "../ui/CityBackdrop";
 import { MenuList } from "../ui/MenuList";
 import { COLORS, pixelText } from "../ui/pixelText";
@@ -12,9 +13,10 @@ export class MenuScene extends Phaser.Scene {
 
   create(): void {
     createCityBackdrop(this);
+    audio.playMusic("exploration");
 
     pixelText(this, W / 2, 40, "L'AVENTURE DE", 8);
-    const title = pixelText(this, W / 2, 68, "SACHA / LÉA", 24, COLORS.matcha).setShadow(2, 2, "#15102e", 0, false, true);
+    const title = pixelText(this, W / 2, 68, "SACHA / LÉA", 24, COLORS.green).setShadow(2, 2, "#15102e", 0, false, true);
     title.y = -30;
     this.tweens.add({ targets: title, y: 68, duration: 600, ease: "Bounce.easeOut" });
 

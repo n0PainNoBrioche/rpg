@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { GAME_HEIGHT as H, GAME_WIDTH as W } from "../core/Game";
+import { GAME_HEIGHT as H, GAME_WIDTH as W } from "../core/constants";
 
 function rng(seed: number): () => number {
   let s = seed >>> 0;
@@ -29,7 +29,7 @@ function buildingLayer(scene: Phaser.Scene, seed: number, baseY: number, minH: n
   return g;
 }
 
-/** Décor de ville nocturne en plusieurs plans, avec défilement lent et enseigne matcha. */
+/** Décor de ville nocturne en plusieurs plans, avec défilement lent et enseigne néon. */
 export function createCityBackdrop(scene: Phaser.Scene): void {
   const sky = scene.add.graphics();
   const bands = [0x1a1340, 0x241a52, 0x31236a, 0x4a2c7a, 0x7a3a86, 0xb04a84, 0xd9627f];
@@ -55,7 +55,7 @@ export function createCityBackdrop(scene: Phaser.Scene): void {
   street.fillStyle(0x0d0922).fillRect(0, 232, W, H - 232);
   street.fillStyle(0x2a1f5a).fillRect(0, 232, W, 2);
 
-  // Enseigne néon matcha, fixe au premier plan, qui grésille.
+  // Enseigne néon verte, fixe au premier plan, qui grésille.
   const sign = scene.add.graphics();
   sign.fillStyle(0x8fbf5a, 0.25).fillRect(40, 196, 70, 22);
   sign.lineStyle(2, 0xa8d86a).strokeRect(44, 200, 62, 14);
