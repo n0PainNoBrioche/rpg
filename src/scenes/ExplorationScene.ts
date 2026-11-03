@@ -38,7 +38,9 @@ export class ExplorationScene extends Phaser.Scene implements EventHost {
   private player!: ActorRef;
   private hint!: Phaser.GameObjects.Text;
   private objective!: Phaser.GameObjects.Text;
-  private keys!: Record<"left" | "right" | "a" | "d" | "q" | "act1" | "act2" | "act3", Phaser.Input.Keyboard.Key>;
+  private keys!: Record<"left" | "right" | "a" | "d" | "q", Phaser.Input.Keyboard.Key>;
+  /** Appui sur une touche d'action, mémorisé jusqu'à la prochaine image (jamais pendant un dialogue). */
+  private actionPressed = false;
 
   constructor() {
     super("ExplorationScene");
@@ -83,10 +85,16 @@ export class ExplorationScene extends Phaser.Scene implements EventHost {
       a: kb.addKey("A"),
       d: kb.addKey("D"),
       q: kb.addKey("Q"),
-      act1: kb.addKey("SPACE"),
-      act2: kb.addKey("ENTER"),
-      act3: kb.addKey("Z"),
     };
+    this.actionPressed = false;
+    const onActionKey = (e: KeyboardEvent): void => {
+      if (e.repeat || !["Space", "Enter", "KeyZ"].includes(e.code)) return;
+      // Un appui qui sert à valider un dialogue ne doit jamais relancer une interaction.
+      if (this.runner?.busy || this.dialogue?.active) return;
+      this.actionPressed = true;
+    };
+    kb.on("keydown", onActionKey);
+    this.events.once("shutdown", () => kb.off("keydown", onActionKey));
     this.dialogue = new DialogueBox(this, level.dialogues.speakers, save.pseudo);
     this.controls = new MobileControls(this);
 
@@ -162,6 +170,8 @@ export class ExplorationScene extends Phaser.Scene implements EventHost {
     const busy = this.runner.busy || this.dialogue.active;
     const p = this.player.sprite;
     if (busy) {
+      this.actionPressed = false;
+      this.controls.consumeAction();
       if (p.anims.isPlaying && !this.walkingScripted) this.stopWalk(this.player);
       this.hint.setVisible(false);
       return;
@@ -188,7 +198,8 @@ export class ExplorationScene extends Phaser.Scene implements EventHost {
     }
 
     const target = this.nearestInteractable();
-    const action = Phaser.Input.Keyboard.JustDown(k.act1) || Phaser.Input.Keyboard.JustDown(k.act2) || Phaser.Input.Keyboard.JustDown(k.act3) || this.controls.consumeAction();
+    const action = this.actionPressed || this.controls.consumeAction();
+    this.actionPressed = false;
     if (target) {
       const spr = this.targets.get(target.trigger.type === "interact" ? target.trigger.target : "")!;
       this.hint.setVisible(true).setPosition(spr.x, spr.getBounds().top - 8 + Math.sin(this.time.now / 160) * 2);

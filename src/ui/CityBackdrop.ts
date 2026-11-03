@@ -29,7 +29,7 @@ function buildingLayer(scene: Phaser.Scene, seed: number, baseY: number, minH: n
   return g;
 }
 
-/** Décor de ville nocturne en plusieurs plans, avec défilement lent et enseigne néon. */
+/** Décor de ville nocturne en plusieurs plans, avec défilement lent. */
 export function createCityBackdrop(scene: Phaser.Scene): void {
   const sky = scene.add.graphics();
   const bands = [0x1a1340, 0x241a52, 0x31236a, 0x4a2c7a, 0x7a3a86, 0xb04a84, 0xd9627f];
@@ -54,11 +54,4 @@ export function createCityBackdrop(scene: Phaser.Scene): void {
   const street = scene.add.graphics();
   street.fillStyle(0x0d0922).fillRect(0, 232, W, H - 232);
   street.fillStyle(0x2a1f5a).fillRect(0, 232, W, 2);
-
-  // Enseigne néon verte, fixe au premier plan, qui grésille.
-  const sign = scene.add.graphics();
-  sign.fillStyle(0x8fbf5a, 0.25).fillRect(40, 196, 70, 22);
-  sign.lineStyle(2, 0xa8d86a).strokeRect(44, 200, 62, 14);
-  sign.fillStyle(0xa8d86a).fillRect(52, 205, 46, 3);
-  scene.tweens.add({ targets: sign, alpha: 0.55, duration: 140, yoyo: true, repeat: -1, repeatDelay: 1800 });
 }
