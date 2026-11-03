@@ -1,17 +1,17 @@
 {
   "encounters": {
-    "boss_maxime": {
+    "boss_macron": {
       "enemies": [
-        "maxime"
+        "macron"
       ],
       "music": "boss",
-      "intro": "Maxime le petit con te barre la route !"
+      "intro": "macron le petit con te barre la route !"
     }
   },
   "enemies": {
-    "maxime": {
-      "name": "Maxime le petit con",
-      "texture": "maxime",
+    "macron": {
+      "name": "macron le petit con",
+      "texture": "macron",
       "scale": 4,
       "stats": {
         "maxHp": 240,

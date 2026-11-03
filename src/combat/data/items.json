@@ -1,6 +1,6 @@
 {
-  "chocolat_chaud": {
-    "name": "Chocolat chaud",
+  "matcha": {
+    "name": "Matcha",
     "description": "Rend 40 PV",
     "target": "ally",
     "hp": 40

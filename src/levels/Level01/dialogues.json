@@ -8,9 +8,9 @@
       "name": "Clément",
       "portrait": "portrait_clement"
     },
-    "maxime": {
-      "name": "Maxime le petit con",
-      "portrait": "portrait_maxime"
+    "macron": {
+      "name": "Macron le petit con",
+      "portrait": "portrait_macron"
     },
     "cries": {
       "name": "???"
@@ -31,32 +31,32 @@
         "text": "Ça vient du bout de la rue... Allons voir, par curiosité."
       }
     ],
-    "meet_maxime": [
+    "meet_macron": [
       {
-        "speaker": "maxime",
-        "text": "Ah, une spectatrice. Parfait. Je suis Maxime le petit con."
+        "speaker": "macron",
+        "text": "Ah, une spectatrice. Parfait. Je suis macron le petit con."
       },
       {
-        "speaker": "maxime",
+        "speaker": "macron",
         "text": "Les protections hygiéniques sont devenues un produit de luxe. Un produit de luxe mérite une taxation exceptionnelle : 1000 % !"
       },
       {
         "speaker": "clement",
-        "text": "Cette taxe va appauvrir encore plus les femmes... qui paient déjà la taxe rose !"
+        "text": "Cette taxe va appauvrir encore plus les femmes... qui gagnent déjà 20% de moins que nous !"
       },
       {
-        "speaker": "maxime",
+        "speaker": "macron",
         "text": "Détail technique. Mon projet est excellent. J'ai toujours raison."
       },
       {
         "speaker": "clement",
-        "text": "Je dois absolument le battre pour empêcher le vote... mais je n'arrive plus à me battre."
+        "text": "Je dois absolument le battre pour empêcher le vote... mais je suis à bout de force."
       }
     ],
     "pre_battle": [
       {
         "speaker": "clement",
-        "text": "Aide-moi... Je ne peux pas le laisser faire ! Il va rendre les protections inaccessibles à des millions de femmes !"
+        "text": "Aide-moi... Je ne peux pas le laisser faire ! Il va rendre les protections hygiéniques inaccessibles à des millions de femmes !"
       },
       {
         "speaker": "hero",
@@ -64,16 +64,16 @@
       },
       {
         "speaker": "clement",
-        "text": "Merci ! Je t'aiderai avec mon clavier et tout mon savoir."
+        "text": "Merci ! Je t'aiderai avec mon tote bag et mes beaux yeux."
       },
       {
-        "speaker": "maxime",
-        "text": "Un clavier ? Contre un spécialiste des taxes ? Adorable."
+        "speaker": "macron",
+        "text": "Vous allez regretter de m'avoir défié !"
       }
     ],
     "post_battle": [
       {
-        "speaker": "maxime",
+        "speaker": "macron",
         "text": "Impossible ! Mon projet de taxation des protections hygiéniques..."
       },
       {
@@ -82,10 +82,10 @@
       },
       {
         "speaker": "clement",
-        "text": "Nous avons réussi... L'accès aux protections est sauvé !"
+        "text": "Nous avons réussi... Le pouvoir d'achat des femmes est sauf !"
       },
       {
-        "speaker": "maxime",
+        "speaker": "macron",
         "text": "Je reviendrai... avec un amendement !"
       }
     ],
@@ -106,7 +106,7 @@
       },
       {
         "speaker": "clement",
-        "text": "Génial ! Tu peux m'envoyer tes disponibilités sur Instagram !"
+        "text": "Génial ! Tu peux m'envoyer tes dispo sur Instagram !"
       }
     ],
     "refuse": [

@@ -2,7 +2,7 @@
 
 JRPG pixel art humoristique jouable dans le navigateur (PC et mobile), Phaser 3 + TypeScript, avec sauvegardes côté serveur.
 
-**Niveau 1 : « La taxe tampon »** : Maxime le petit con (politicien fictif) veut taxer à 1000 % les protections hygiéniques. Sacha (ou Léa) rencontre Clément, affronte le boss, puis doit répondre à une invitation : accepter valide le niveau et sauvegarde, refuser mène à un Game Over sans sauvegarde.
+**Niveau 1 : « La taxe rose »** : Macron le petit con (politicien fictif) veut taxer à 1000 % les protections hygiéniques. Sacha (ou Léa) rencontre Clément, affronte le boss, puis doit répondre à une invitation : accepter valide le niveau et sauvegarde, refuser mène à un Game Over sans sauvegarde.
 
 ## Lancer le jeu
 

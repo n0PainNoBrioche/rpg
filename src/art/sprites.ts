@@ -91,7 +91,7 @@ const CLEMENT_LEGS = {
   narrow: ["....KJJKKJJK....", "....KJJKKJJK....", "....KjjKKjjK....", "...KKWWKKWWKK..."],
 };
 
-// ---------------------------------------------------------------- Maxime (boss)
+// ---------------------------------------------------------------- Macron (boss)
 const MAXIME_PALETTE: Palette = {
   K: "#2a1a26", G: "#4a4a58", S: "#f0cdb8", E: "#2a3a8a", k: "#a0504a",
   N: "#2b3a67", n: "#1f2a4d", W: "#f4f4f4", T: "#7a3a86",
@@ -172,9 +172,9 @@ function bakeWalkSet(
 export function bakeAllSprites(scene: Phaser.Scene): void {
   bakeWalkSet(scene, "hero", HERO_BODY, HERO_LEGS, HERO_PALETTE);
   bakeWalkSet(scene, "clement", CLEMENT_BODY, CLEMENT_LEGS, CLEMENT_PALETTE);
-  bakeRows(scene, "maxime", MAXIME, MAXIME_PALETTE);
+  bakeRows(scene, "macron", MAXIME, MAXIME_PALETTE);
   bakeRows(scene, "portrait_hero", HERO_BODY.slice(0, 13), HERO_PALETTE);
   bakeRows(scene, "portrait_clement", CLEMENT_BODY.slice(0, 13), CLEMENT_PALETTE);
-  bakeRows(scene, "portrait_maxime", MAXIME.slice(0, 13), MAXIME_PALETTE);
+  bakeRows(scene, "portrait_macron", MAXIME.slice(0, 13), MAXIME_PALETTE);
   for (const [key, { rows, palette }] of Object.entries(SMALL)) bakeRows(scene, key, rows, palette);
 }

@@ -6,7 +6,7 @@ import dialogues from "./dialogues.json";
 import events from "./events.json";
 import enemies from "./enemies.json";
 
-/** Niveau 1 : La taxe tampon. Décor, personnages et contenu (dialogues, événements, ennemis en JSON). */
+/** Niveau 1 : La taxe rose. Décor, personnages et contenu (dialogues, événements, ennemis en JSON). */
 export const level01: LevelDefinition = {
   id: "level01",
   sceneKey: "ExplorationScene",
@@ -14,7 +14,7 @@ export const level01: LevelDefinition = {
   playerStart: 80,
   music: "exploration",
   party: ["heroine", "clement"],
-  startingItems: { chocolat_chaud: 2, the_glace: 1 },
+  startingItems: { matcha: 2, the_glace: 1 },
   props: [
     { id: "lamp1", type: "lamp", x: 130, glow: true },
     { id: "bench1", type: "bench", x: 230 },
@@ -30,7 +30,7 @@ export const level01: LevelDefinition = {
   ],
   actors: [
     { id: "clement", texture: "clement", x: 1390, scale: 2, pose: "down" },
-    { id: "maxime", texture: "maxime", x: 1475, scale: 2.1, facing: -1 },
+    { id: "macron", texture: "macron", x: 1475, scale: 2.1, facing: -1 },
   ],
   dialogues: dialogues as unknown as DialogueFile,
   events: events as unknown as EventDef[],

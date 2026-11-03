@@ -48,8 +48,8 @@ function newBattle(seed: number): CombatManager {
   let s = seed;
   const rng = () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296);
   const party = [createPartyMember("heroine", "Sacha"), createPartyMember("clement", "Clément")];
-  const boss = createEnemy("maxime", (enemies.enemies as any).maxime);
-  return new CombatManager([...party, boss], skills, items, { chocolat_chaud: 2, the_glace: 1 }, rng);
+  const boss = createEnemy("macron", (enemies.enemies as any).macron);
+  return new CombatManager([...party, boss], skills, items, { matcha: 2, the_glace: 1 }, rng);
 }
 
 function playerActions(cm: CombatManager, rng: () => number): Action[] {
@@ -61,8 +61,8 @@ function playerActions(cm: CombatManager, rng: () => number): Action[] {
       continue;
     }
     const lowHp = m.stats.hp < m.stats.maxHp * 0.35;
-    if (lowHp && (cm.inventory.chocolat_chaud ?? 0) > 0) {
-      acts.push({ actorId: m.id, kind: "item", itemId: "chocolat_chaud", targetIds: [m.id] });
+    if (lowHp && (cm.inventory.matcha ?? 0) > 0) {
+      acts.push({ actorId: m.id, kind: "item", itemId: "matcha", targetIds: [m.id] });
       continue;
     }
     const usable = m.skills.filter((id) => cm.skill(id).mpCost <= m.stats.mp);

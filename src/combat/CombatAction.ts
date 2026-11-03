@@ -104,7 +104,7 @@ export interface ActionOutcome {
   /** L'acteur n'a pas pu agir : raison affichée. */
   skipped?: string;
   steps: StepResult[];
-  /** Message complémentaire (ex. « Maxime se réveille ! »). */
+  /** Message complémentaire (ex. « Macron se réveille ! »). */
   notes: string[];
 }
 

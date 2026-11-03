@@ -150,7 +150,7 @@ export class DialogueBox {
         callback: () => {
           i++;
           this.body.setText(this.fullText.slice(0, i));
-          if (i % 2 === 0) audio.playSfx(line.speaker === "maxime" ? "blip_low" : "blip");
+          if (i % 2 === 0) audio.playSfx(line.speaker === "macron" ? "blip_low" : "blip");
           if (i >= this.fullText.length) this.finishTyping();
         },
       });
