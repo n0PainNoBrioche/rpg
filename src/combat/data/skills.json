@@ -27,7 +27,7 @@
     "lines": [{ "who": "user", "text": "Une taxe sur les tampons ? Tu vas te faire tamponner !" }]
   },
 
-  "coup_clavier": { "name": "Coup clavier", "mpCost": 0, "kind": "physical", "target": "enemy", "power": 1.0, "animation": "keyboard_hit", "message": "{user} frappe avec son clavier !" },
+  "coup_clavier": { "name": "Coup de clavier", "mpCost": 0, "kind": "physical", "target": "enemy", "power": 1.0, "animation": "keyboard_hit", "message": "{user} frappe avec son clavier !" },
   "clavier_fou": { "name": "Clavier fou", "mpCost": 3, "kind": "physical", "target": "enemy", "power": 1.6, "animation": "keyboard", "message": "{user} lance une rafale d'attaques au clavier !" },
   "combo_mecanique": { "name": "Combo méca", "mpCost": 7, "kind": "physical", "target": "enemy", "power": 0.9, "hits": 3, "animation": "keyboard_combo", "message": "{user} enchaîne un combo mécanique !" },
   "ragebait": {

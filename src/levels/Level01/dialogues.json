@@ -28,13 +28,13 @@
       },
       {
         "speaker": "hero",
-        "text": "Ça vient du bout de la rue... Allons voir, par curiosité."
+        "text": "Ça vient du bout de la rue..."
       }
     ],
     "meet_macron": [
       {
         "speaker": "macron",
-        "text": "Ah, une spectatrice. Parfait. Je suis macron le petit con."
+        "text": "Ah, une spectatrice. Parfait. Je suis Macron le petit con."
       },
       {
         "speaker": "macron",
@@ -106,7 +106,7 @@
       },
       {
         "speaker": "clement",
-        "text": "Génial ! Tu peux m'envoyer tes dispo sur Instagram !"
+        "text": "Génial ! Tu peux m'envoyer tes dispo sur Insta !"
       }
     ],
     "refuse": [
@@ -117,16 +117,16 @@
       {
         "speaker": "clement",
         "effect": "shake",
-        "text": "Ah... Pourtant le zorglub du tampon-kernel, c'est comme un fwip de blorgnabule dans le yaourt quantique, tu vois ?!"
+        "text": "Ah... odadaezpd"
       },
       {
         "speaker": "clement",
         "effect": "shake",
-        "text": "...et le glimbo qui fait flonk sur le pod de la tartiflette distribuée, donc forcément, wazzzzak !"
+        "text": "... zfafioa"
       },
       {
         "speaker": "hero",
-        "text": "Quoi ?"
+        "text": "T'as dit quoi ?"
       },
       {
         "speaker": "clement",

@@ -5,12 +5,12 @@
         "macron"
       ],
       "music": "boss",
-      "intro": "macron le petit con te barre la route !"
+      "intro": "Macron le petit con te barre la route !"
     }
   },
   "enemies": {
     "macron": {
-      "name": "macron le petit con",
+      "name": "Macron le petit con",
       "texture": "macron",
       "scale": 4,
       "stats": {
@@ -96,15 +96,15 @@
         "turns": 2
       }
     },
-    "reforme_surprise": {
-      "name": "Réforme",
+    "493": {
+      "name": "49.3",
       "mpCost": 0,
       "kind": "physical",
       "target": "enemy",
       "power": 2.0,
       "animation": "reform",
-      "message": "{user} dégaine une réforme surprise !",
-      "shout": "Réforme... surprise !"
+      "message": "{user} fait passer une reforme par la force !",
+      "shout": "49... 3 !!!!"
     }
   }
 }
