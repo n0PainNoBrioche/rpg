@@ -26,7 +26,7 @@
         "taxe_exceptionnelle",
         "discours_economique",
         "taxe_rose",
-        "reforme_surprise"
+        "493"
       ],
       "ai": [
         {
@@ -43,7 +43,7 @@
           "minTurn": 2
         },
         {
-          "skill": "reforme_surprise",
+          "skill": "493",
           "weight": 2,
           "minTurn": 3
         }
